@@ -1,0 +1,53 @@
+import { postgres } from '../../config/database.js'
+
+class TasksRepository {
+	async getLeaders(startDate, endDate) {
+		const leaders_data = await postgres.query(
+			`
+			
+		`,
+			[startDate, endDate]
+		)
+		return leaders_data
+	}
+	async getLeaderDepartments(startDate, endDate, leader) {
+		console.log(startDate, endDate, leader)
+		const departments_data = await postgres.query(
+			`
+			
+		`,
+			[startDate, endDate, leader]
+		)
+		return departments_data
+	}
+	async getDepartmentEmployees(startDate, endDate, department) {
+		const employees_data = await postgres.query(
+			`
+			
+		`,
+			[startDate, endDate, department]
+		)
+		return employees_data
+	}
+	async getPerson(startDate, endDate, person) {
+		console.log(startDate, endDate, person)
+		const person_data = await postgres.query(
+			`
+			
+		`,
+			[startDate, endDate, person]
+		)
+		return person_data
+	}
+	async getLeader(startDate, endDate, leader) {
+		const leader_data = await postgres.query(
+			`
+			
+		`,
+			[startDate, endDate, leader]
+		)
+		return leader_data
+	}
+}
+
+export default new TasksRepository()
